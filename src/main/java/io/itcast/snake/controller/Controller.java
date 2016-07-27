@@ -83,4 +83,6 @@ public class Controller extends KeyAdapter implements SnakeListener {
         snake.start();   //蛇开始动
         food.newFood(ground.getPoint());  //随机丢食物  （ getPoint() 随机坐标 ）
     }
+
+    
 }

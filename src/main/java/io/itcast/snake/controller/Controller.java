@@ -84,5 +84,5 @@ public class Controller extends KeyAdapter implements SnakeListener {
         food.newFood(ground.getPoint());  //随机丢食物  （ getPoint() 随机坐标 ）
     }
 
-    
+
 }

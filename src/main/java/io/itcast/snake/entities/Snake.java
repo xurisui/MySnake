@@ -1,5 +1,6 @@
 package io.itcast.snake.entities;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import io.itcast.snake.listener.SnakeListener;
 import io.itcast.snake.util.Global;
 
@@ -69,7 +70,9 @@ public class Snake {
         int x = body.getFirst().x;
         int y = body.getFirst().y;
 
-        switch (newDirection) {    //根据方向改变蛇的坐标
+        System.out.println(oldDirection);
+
+        switch (oldDirection) {    //根据方向改变蛇的坐标
             case UP:
                 y--;
                 if (y < 0) {
@@ -81,6 +84,7 @@ public class Snake {
                 if (y >= Global.HEIGHT) {
                     y = 0;
                 }
+                break;
             case LEFT:
                 x--;
                 if (x < 0) {
@@ -94,6 +98,8 @@ public class Snake {
                 }
                 break;
         }
+        System.out.println(x + "," +
+                y);
         Point newHead = new Point(x, y);
 
         body.addFirst(newHead);
@@ -159,7 +165,7 @@ public class Snake {
                 }
 
                 try {             //捕获异常  try {...} catch{...}
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
